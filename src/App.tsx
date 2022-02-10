@@ -1,23 +1,14 @@
-import React from 'react';
-import styles from './App.module.scss';
+import React from "react";
+import styles from "./App.module.scss";
+import LoginForm from "./components/LoginForm";
 
-
-
-const App =()=> {
+const App = () => {
   return (
-   <div>
-     <form action="">
-      <input name="Email"type="text" placeholder="Enter Email" />
-      <label htmlFor="Email"><b>Email</b></label>
-
-      <input name="Password"type="text" placeholder="Enter password" />
-      <label htmlFor="Password"><b>Password</b></label>
-     </form>
-     <button>Login</button>
-     
-   </div>
+    <div className={styles.main}>
+      <LoginForm />
+    </div>
   );
-}
+};
 
 export default App;
 
