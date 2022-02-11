@@ -3,10 +3,6 @@
   width: 100%;
   height: fit-content;
   padding: 40px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: #191919;
   text-align: center;
 
@@ -14,6 +10,11 @@
     color: white;
     text-transform: uppercase;
     font-weight: 200;
+  }
+
+  input {
+    font-family: "Roboto";
+    font-weight: 300;
   }
 
   .text {
@@ -39,6 +40,8 @@
     position: relative;
     bottom: 18px;
     font-size: 12px;
+    font-family: "Roboto";
+    font-weight: 300;
   }
 
   .submit {
@@ -52,7 +55,6 @@
     outline: none;
     color: white;
     border-radius: 24px;
-    transition: 0.25s;
     cursor: pointer;
   }
 
@@ -61,43 +63,50 @@
   }
 
   .text:focus::-webkit-input-placeholder {
+    transition: 0.25s;
     position: relative;
-    font-size: 10px;
+    font-size: 15px;
+    right: 30%;
   }
 }
 
-@media screen and (min-width: 200px) {
+@media screen and (min-width: 300px) {
+  .text {
+    font-size: 14px;
+    width: 200px;
+  }
   .text:focus {
-    width: 100%;
+    width: 235px;
   }
   .text:focus::-webkit-input-placeholder {
-    bottom: 15px;
+    transition: 0.25s;
   }
 }
 
 @media screen and (min-width: 481px) {
   h1 {
-    font-size: 39px;
+    font-size: 25px;
   }
   .text {
-    font-size: 15px;
+    font-size: 14px;
+    width: 235px;
   }
   .text:focus {
     width: 280px;
   }
 
   .text:focus::-webkit-input-placeholder {
-    bottom: 17.7px;
+    transition: 0.25s;
   }
 }
 
 @media screen and (min-width: 768px) {
   h1 {
-    font-size: 45px;
+    font-size: 30px;
   }
 
   .text {
-    font-size: 20px;
+    font-size: 16px;
     width: 250px;
   }
 
@@ -110,17 +119,17 @@
   }
 
   .text:focus::-webkit-input-placeholder {
-    bottom: 20px;
+    transition: 0.25s;
   }
 }
 
 @media screen and (min-width: 991px) {
   h1 {
-    font-size: 60px;
+    font-size: 35px;
   }
 
   .text {
-    font-size: 22px;
+    font-size: 18px;
     width: 300px;
   }
 
@@ -129,6 +138,6 @@
   }
 
   .text:focus::-webkit-input-placeholder {
-    bottom: 25px;
+    transition: 0.25s;
   }
 }

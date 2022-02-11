@@ -1,12 +1,13 @@
 import React from "react";
-import styles from "./App.module.scss";
 import LoginForm from "./components/LoginForm";
+import NavBar from "./components/NavBar";
 
 const App = () => {
   return (
-    <div className={styles.main}>
+    <>
+      <NavBar />
       <LoginForm />
-    </div>
+    </>
   );
 };
 
