@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./LoginForm.module.scss";
 
 const LoginForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
-    <form className={styles.box} action="">
+    <div className={styles.box}>
       <h1>Login</h1>
-      <input className={styles.text} type="text" placeholder="Email" />
+      <input
+        className={styles.text}
+        type="text"
+        placeholder="Email"
+        onInput={(event) => {
+          setEmail(event.currentTarget.value);
+        }}
+      />
       <p>Please enter an email address</p>
-      <input className={styles.text} type="text" placeholder="Password" />
+      <input
+        className={styles.text}
+        type="password"
+        placeholder="Password"
+        onInput={(event) => {
+          setPassword(event.currentTarget.value);
+        }}
+      />
       <p>Please enter a valid password </p>
-      <input className={styles.submit} type="submit" name="" id="" />
-    </form>
+      <button className={styles.submit}>Submit</button>
+    </div>
   );
 };
 
