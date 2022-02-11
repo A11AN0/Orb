@@ -39,7 +39,7 @@ const RegisterForm = () => {
           validateInput();
         }}
       >
-        Submit
+        Register
       </button>
     </div>
   );

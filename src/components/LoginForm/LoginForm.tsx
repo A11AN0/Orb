@@ -39,7 +39,7 @@ const LoginForm = () => {
           validateInput();
         }}
       >
-        Submit
+        Login
       </button>
     </div>
   );
