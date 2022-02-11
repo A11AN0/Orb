@@ -1,0 +1,143 @@
+.box {
+  min-width: 300px;
+  width: 100%;
+  height: fit-content;
+  padding: 40px;
+  background-color: #512e8a;
+  text-align: center;
+
+  h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 200;
+  }
+
+  input {
+    font-family: "Roboto";
+    font-weight: 300;
+  }
+
+  .text {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    outline: none;
+    color: white;
+    border-radius: 30px;
+    transition: 0.5s;
+  }
+
+  .text:focus {
+    border-color: #2ecc71;
+  }
+
+  p {
+    color: red;
+    position: relative;
+    bottom: 18px;
+    font-size: 12px;
+    font-family: "Roboto";
+    font-weight: 300;
+  }
+
+  .submit {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #23cc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    cursor: pointer;
+  }
+
+  .submit:hover {
+    background: #2ecc71;
+  }
+
+  .text:focus::-webkit-input-placeholder {
+    transition: 0.25s;
+    position: relative;
+    font-size: 15px;
+    right: 30%;
+  }
+}
+
+@media screen and (min-width: 300px) {
+  .text {
+    font-size: 14px;
+    width: 200px;
+  }
+  .text:focus {
+    width: 235px;
+  }
+  .text:focus::-webkit-input-placeholder {
+    transition: 0.25s;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  h1 {
+    font-size: 25px;
+  }
+  .text {
+    font-size: 14px;
+    width: 235px;
+  }
+  .text:focus {
+    width: 280px;
+  }
+
+  .text:focus::-webkit-input-placeholder {
+    transition: 0.25s;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  .text {
+    font-size: 16px;
+    width: 250px;
+  }
+
+  .text:focus {
+    width: 350px;
+  }
+
+  .submit {
+    width: 18.5%;
+  }
+
+  .text:focus::-webkit-input-placeholder {
+    transition: 0.25s;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  h1 {
+    font-size: 35px;
+  }
+
+  .text {
+    font-size: 18px;
+    width: 300px;
+  }
+
+  .text:focus {
+    width: 400px;
+  }
+
+  .text:focus::-webkit-input-placeholder {
+    transition: 0.25s;
+  }
+}

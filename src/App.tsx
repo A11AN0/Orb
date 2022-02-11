@@ -1,12 +1,14 @@
 import React from "react";
 import LoginForm from "./components/LoginForm";
 import NavBar from "./components/NavBar";
+import RegisterForm from "./components/RegisterForm";
 
 const App = () => {
   return (
     <>
       <NavBar />
       <LoginForm />
+      <RegisterForm />
     </>
   );
 };
