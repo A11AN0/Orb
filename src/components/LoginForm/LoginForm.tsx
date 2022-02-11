@@ -4,6 +4,14 @@ import styles from "./LoginForm.module.scss";
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [inValidEmail, setInvalidEmail] = useState(false);
+  const [inValidPassword, setInvalidPassword] = useState(false);
+
+  const validateInput = (): void => {
+    email.length === 0 && setInvalidEmail(true);
+    password.length === 0 && setInvalidPassword(true);
+  };
+
   return (
     <div className={styles.box}>
       <h1>Login</h1>
@@ -15,7 +23,7 @@ const LoginForm = () => {
           setEmail(event.currentTarget.value);
         }}
       />
-      <p>Please enter an email address</p>
+      {inValidEmail ? <p>Please enter an email address</p> : null}
       <input
         className={styles.text}
         type="password"
@@ -24,8 +32,15 @@ const LoginForm = () => {
           setPassword(event.currentTarget.value);
         }}
       />
-      <p>Please enter a valid password </p>
-      <button className={styles.submit}>Submit</button>
+      {inValidPassword ? <p>Please enter a valid password </p> : null}
+      <button
+        className={styles.submit}
+        onClick={() => {
+          validateInput();
+        }}
+      >
+        Submit
+      </button>
     </div>
   );
 };
