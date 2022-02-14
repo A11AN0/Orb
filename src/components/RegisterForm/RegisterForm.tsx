@@ -8,14 +8,6 @@ const RegisterForm = () => {
   const [inValidEmail, setInvalidEmail] = useState(false);
   const [inValidPassword, setInvalidPassword] = useState(false);
 
-  const validateInput = (): void => {
-    email.length === 0 && setInvalidEmail(true);
-    password.length === 0 && setInvalidPassword(true);
-    if (inValidEmail === false && inValidPassword === false) {
-      deliverLogInData(loginData);
-    }
-  };
-
   const loginData = {
     email: email,
     password: password,
@@ -30,6 +22,14 @@ const RegisterForm = () => {
       .catch((error) => {
         console.log(error);
       });
+  };
+
+  const validateInput = (): void => {
+    email.length === 0 && setInvalidEmail(true);
+    password.length === 0 && setInvalidPassword(true);
+    if (inValidEmail === false && inValidPassword === false) {
+      deliverLogInData(loginData);
+    }
   };
 
   return (
