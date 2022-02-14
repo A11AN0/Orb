@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import styles from "./RegisterForm.module.scss";
 
@@ -10,6 +11,25 @@ const RegisterForm = () => {
   const validateInput = (): void => {
     email.length === 0 && setInvalidEmail(true);
     password.length === 0 && setInvalidPassword(true);
+    if (inValidEmail === false && inValidPassword === false) {
+      deliverLogInData(loginData);
+    }
+  };
+
+  const loginData = {
+    email: email,
+    password: password,
+  };
+
+  const deliverLogInData = (dataObject: Object) => {
+    axios
+      .post("http://localhost:7777", dataObject)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
