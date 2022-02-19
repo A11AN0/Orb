@@ -1,4 +1,4 @@
-import axios from "axios";
+import { deliverLogInData, LoginData } from "../../services/loginReg.service";
 import React, { useState } from "react";
 import styles from "./RegisterForm.module.scss";
 
@@ -8,26 +8,15 @@ const RegisterForm = () => {
   const [inValidEmail, setInvalidEmail] = useState(false);
   const [inValidPassword, setInvalidPassword] = useState(false);
 
-  const loginData = {
+  const loginData: LoginData = {
     email: email,
     password: password,
-  };
-
-  const deliverLogInData = (dataObject: Object) => {
-    axios
-      .post("http://localhost:7777", dataObject)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
   };
 
   const validateInput = (): void => {
     email.length === 0 && setInvalidEmail(true);
     password.length === 0 && setInvalidPassword(true);
-    if (inValidEmail === false && inValidPassword === false) {
+    if (email.length > 0 && password.length > 0) {
       deliverLogInData(loginData);
     }
   };

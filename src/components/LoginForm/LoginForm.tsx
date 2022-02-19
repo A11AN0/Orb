@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./LoginForm.module.scss";
+import { verifyLogInData, LoginData } from "../../services/loginReg.service";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -10,6 +11,14 @@ const LoginForm = () => {
   const validateInput = (): void => {
     email.length === 0 && setInvalidEmail(true);
     password.length === 0 && setInvalidPassword(true);
+    if (email.length > 0 && password.length > 0) {
+      verifyLogInData(loginData);
+    }
+  };
+
+  const loginData: LoginData = {
+    email: email,
+    password: password,
   };
 
   return (
