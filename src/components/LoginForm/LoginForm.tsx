@@ -9,7 +9,7 @@ const LoginForm = () => {
   const [inValidPassword, setInvalidPassword] = useState(false);
 
   const validateInput = (): void => {
-    email.length === 0 && setInvalidEmail(true);
+    if (email.length === 0 || !email.includes("@")) setInvalidEmail(true);
     password.length === 0 && setInvalidPassword(true);
     if (email.length > 0 && password.length > 0) {
       verifyLogInData(loginData);
@@ -41,7 +41,7 @@ const LoginForm = () => {
           setPassword(event.currentTarget.value);
         }}
       />
-      {inValidPassword ? <p>Please enter a valid password </p> : null}
+      {inValidPassword ? <p>Please enter a valid password</p> : null}
       <button
         className={styles.submit}
         onClick={() => {
