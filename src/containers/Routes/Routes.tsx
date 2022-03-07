@@ -1,14 +1,15 @@
 import React from "react";
 import { Router, RouteComponentProps } from "@reach/router";
 import LoginForm from "../../components/LoginForm";
+import Home from "../Home";
 import RegisterForm from "../../components/RegisterForm";
 
 const LoginFormRoute = (props: RouteComponentProps) => <LoginForm />;
 const RegisterFormRoute = (props: RouteComponentProps) => <RegisterForm />;
+const HomeRoute = (props: RouteComponentProps) => <Home />;
 const InitialPageRoute = (props: RouteComponentProps) => (
   <div>login or register</div>
 );
-const HomePageRoute = (props: RouteComponentProps) => <div>Homepage :)</div>;
 
 const Routes = () => {
   return (
@@ -16,7 +17,7 @@ const Routes = () => {
       <InitialPageRoute default />
       <LoginFormRoute path="login" />
       <RegisterFormRoute path="register" />
-      <HomePageRoute path="home" />
+      <HomeRoute path="home" />
     </Router>
   );
 };
