@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./LoginForm.module.scss";
 import { verifyLogInData, LoginData } from "../../services/loginReg.service";
+import { Redirect } from "@reach/router";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -11,7 +12,7 @@ const LoginForm = () => {
   const validateInput = (): void => {
     if (email.length === 0 || !email.includes("@")) setInvalidEmail(true);
     password.length === 0 && setInvalidPassword(true);
-    if (email.length > 0 && password.length > 0) {
+    if (email.length > 0 && password.length > 0 && email.includes("@")) {
       verifyLogInData(loginData);
     }
   };
